@@ -12,6 +12,7 @@ public class ExceptionApplication {
 		LimpaWindows.limpa_windows();
 		//Calculadora.Calcular();
 		Menu.Menuinicial();
+		System.out.println("fim do codigo ");
 	}
 
 }

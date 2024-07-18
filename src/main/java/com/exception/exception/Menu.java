@@ -7,14 +7,13 @@ public class Menu {
     public static void Menuinicial() {
         Scanner scanner = new Scanner(System.in);
         boolean menu = true;
-        String[] nomes = {"Lucas", "Enzo", "Eloisa"};
+        
 
         while (menu) {
             System.out.println("Menu:");
-            System.out.println("1-");
-            System.out.println("2-");
-            System.out.println("3-");
-            System.out.println("4-");
+            System.out.println("1- Dividir por zero");
+            System.out.println("2- Listar nomes");
+            System.out.println("3- Sair");
             System.out.print("Escolha uma opção: ");
 
             try {
@@ -22,37 +21,28 @@ public class Menu {
 
                 switch (escolha) {
                     case 1:
-                        System.out.println("Você escolheu a Opção 1.");
-                        for (String string : nomes) {
-                            System.out.println(string);
-                        }
-                        System.out.println("Esolha o index do seu nome desejado:");
-                        int nomeDesejado = scanner.nextInt();
+                    System.out.println("Você escolheu a Opção 1.");
+                    Calculadora.Calcular();
+                    break;
 
-                        if(nomeDesejado >= 0 && nomeDesejado < nomes.length){
-                            String nomeString = nomes[nomeDesejado];
-                            System.out.println("Nome encontrado!" + nomeString);
-                        }else{
-                            System.out.println("Índice inválido.");
-                        };
-
-                        break;
                     case 2:
-                        System.out.println("Você escolheu a Opção 2.");
-                        break;
+                    System.out.println("Você escolheu a Opção 3.");
+                    ListarNomes.Listar();
+                    break;
+
                     case 3:
-                        System.out.println("Você escolheu a Opção 3.");
-                        break;
-                    case 4:
                         System.out.println("Saindo...");
                         menu = false;
+                    break;
                     default:
                         System.out.println("Opção inválida. Por favor, escolha uma opção entre 1 e 4.");
-                }
+                    break;
+                    }
+
+
             } catch (InputMismatchException e) {
                 System.out.println("Entrada inválida. Por favor, insira um número inteiro.");
-            } catch (ArrayIndexOutOfBoundsException e){
-                System.out.println("Índice fora dos limites. Por favor, insira um índice válido.");
+                scanner.nextLine();
             }
         }
     }
